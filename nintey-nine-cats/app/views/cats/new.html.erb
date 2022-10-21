@@ -1,0 +1,35 @@
+<h1>Build a Cat!</h1>
+<form action="cats_url" method="post">
+    <label for="name">Name: </label>
+        <input id="name" type="text" name="cat[name]" required>
+        <br>
+        <br>
+    <label for="sex">Sex: </label>
+        <input id="sex" type="radio" name="cat[sex]" value="M" required>
+        <input id="sex" type="radio" name="cat[sex]" value="F">
+        <br>
+        <br>
+    <label for="color">Choose Color: </label>
+        <select name="cat[color]" id="color">
+            <option disabled selected required>--select a color--</option>
+            <% Cat::CAT_COLORS.each do |color| %>
+            <option value="<%= color %>"><%= color %></option>
+            <% end %>
+        </select>
+        <br>
+        <br>
+    <label for="birthday">Select Birthday: </label>
+        <input type="date" id="birthday" name="cat[birth_date]" required>
+        <br>
+        <br>
+    <style>
+        #description{
+            vertical-align: top;
+        }
+    </style>    
+    <label for="description">Description: </label>
+    <!--<br>-->
+        <textarea id="description" name="cat[description]" cols="50">Tell me about that cat o' yours
+        </textarea>
+
+</form>

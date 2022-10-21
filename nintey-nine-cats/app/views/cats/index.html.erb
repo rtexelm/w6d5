@@ -1,0 +1,6 @@
+<h1>All My Kittens</h1>
+
+<% @cats.each do |cat| %>
+    <%= render 'cat_stats', {cat: cat} %>
+<% end %>
+
